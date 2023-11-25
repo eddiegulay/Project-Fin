@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def member_profile(request):
+    return render(request, 'member/profile.html')
