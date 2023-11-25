@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Caches
+.cache/
+
+# Logs
+log/
+logs/
+
+# Virtual environment
+venv/
+env/
+
+# Database
+db.sqlite3
+
+# Static files
+/staticfiles/
+
+# Media
+/media/
+
+# Local development settings
+local_settings.py
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Environment variables file
+.env
+
+# Compiled Python files
+*.pyc
+
+# Compiled translations
+*.mo
+
+# Django test runner temporary files
+*.test
+
+# Python coverage
+htmlcov/
+
+# Dependencies
+/venv/
+/pip-selfcheck.json
+
+# Docker
+docker-compose.yml
+.docker/
