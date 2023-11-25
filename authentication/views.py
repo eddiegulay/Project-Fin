@@ -6,15 +6,15 @@ from .models import Profile, Privilege, User
 from django.shortcuts import redirect
 
 def redirect_based_on_privilege(user):
-    privilege_name = user.profile.privilege.privilege_name
+    privilege_name = user.profile.privilege.privilege_name.lower()
 
-    if privilege_name == 'Hub Manager':
+    if privilege_name == 'hub manager':
         return redirect('/hmanager')
-    elif privilege_name == 'ORG Employee':
+    elif privilege_name == 'org employee':
         return redirect('/employee')
-    elif privilege_name == 'Mentor/Trainer':
+    elif privilege_name == 'mentor/trainer':
         return redirect('/trainer')
-    elif privilege_name == 'Finhub Member':
+    elif privilege_name == 'finhub member':
         return redirect('/member')
     else:
         # Handle unknown privilege
