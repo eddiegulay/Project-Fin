@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -12,7 +13,7 @@ class privilege(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     privilege = models.ForeignKey(privilege, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
