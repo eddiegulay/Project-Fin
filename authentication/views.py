@@ -15,7 +15,7 @@ def register(request):
             return redirect('home')  # Replace 'home' with the URL name of your home page
     else:
         form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'auth/register.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -27,9 +27,9 @@ def user_login(request):
             return redirect('home')  # Replace 'home' with the URL name of your home page
         else:
             # Handle invalid login
-            return render(request, 'registration/login.html', {'error_message': 'Invalid login credentials'})
+            return render(request, 'auth/login.html', {'error_message': 'Invalid login credentials'})
     else:
-        return render(request, 'registration/login.html')
+        return render(request, 'auth/login.html')
 
 
 def user_register(request):
