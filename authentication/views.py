@@ -16,7 +16,7 @@ def login_view(request):
             # Handle invalid login
             return render(request, 'auth/login.html', {'error_message': 'Invalid login credentials'})
     else:
-        return render(request, 'auth/login.html')
+        return render(request, 'auth/sign-in.html')
 
 
 def register_view(request):
