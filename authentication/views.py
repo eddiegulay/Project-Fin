@@ -1,23 +1,10 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, privilege
 
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            # Create a profile for the user
-            Profile.objects.create(user=user)
-            # Log in the user after registration
-            login(request, user)
-            return redirect('home')  # Replace 'home' with the URL name of your home page
-    else:
-        form = UserCreationForm()
-    return render(request, 'auth/register.html', {'form': form})
 
-def user_login(request):
+def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -29,14 +16,13 @@ def user_login(request):
             # Handle invalid login
             return render(request, 'auth/login.html', {'error_message': 'Invalid login credentials'})
     else:
-        return render(request, 'auth/login.html')
+        return render(request, 'auth/sign-in.html')
 
 
-def user_register(request):
+def register_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password1 = request.POST.get('password1')
-        password2 = request.POST.get('password2')
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
@@ -51,6 +37,11 @@ def user_register(request):
         Profile.objects.create(user=user, privilege=privilege_obj)
 
         login(request, user)
-        return redirect('home')  # Replace 'home' with the URL name of your home page
+        return redirect('home')
 
-    return render(request, 'registration/register.html')
+    return render(request, 'auth/sign-up.html')
+
+
+def user_logout(request):
+    logout(request)
+    return redirect('login')
