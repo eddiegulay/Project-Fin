@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, privilege
+from .models import Profile, Privilege
 
 
 def login_view(request):
@@ -22,14 +22,14 @@ def login_view(request):
 def register_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
-        password1 = request.POST.get('password1')
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
+        password1 = request.POST.get('password')
+        first_name = request.POST.get('first-name')
+        last_name = request.POST.get('last-name')
         email = request.POST.get('email')
-        account_type = request.POST.get('account_type')
+        account_type = request.POST.get('account-type')
 
         # get the privilege object
-        privilege_obj = privilege.objects.get(privilege_name=account_type)
+        privilege_obj = Privilege.objects.get(privilege_name=account_type)
 
         user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
 
@@ -39,7 +39,11 @@ def register_view(request):
         login(request, user)
         return redirect('home')
 
-    return render(request, 'auth/sign-up.html')
+    else:
+        # get the privilege object
+        privilege_obj = Privilege.objects.all()
+
+    return render(request, 'auth/sign-up.html', {'privilege': privilege_obj})
 
 
 def user_logout(request):
