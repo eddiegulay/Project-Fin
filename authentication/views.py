@@ -14,7 +14,7 @@ def login_view(request):
             return redirect('home')  # Replace 'home' with the URL name of your home page
         else:
             # Handle invalid login
-            return render(request, 'auth/login.html', {'error_message': 'Invalid login credentials'})
+            return render(request, 'auth/sign-in.html', {'error_message': 'Invalid login credentials'})
     else:
         return render(request, 'auth/sign-in.html')
 
