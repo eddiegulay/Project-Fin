@@ -3,6 +3,23 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Privilege, User
 
+from django.shortcuts import redirect
+
+def redirect_based_on_privilege(user):
+    privilege_name = user.profile.privilege.privilege_name
+
+    if privilege_name == 'Hub Manager':
+        return redirect('/hmanager')
+    elif privilege_name == 'ORG Employee':
+        return redirect('/org_emp')
+    elif privilege_name == 'Mentor/Trainer':
+        return redirect('/trainer')
+    elif privilege_name == 'Finhub Member':
+        return redirect('/member')
+    else:
+        # Handle unknown privilege
+        return redirect('login')
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -11,7 +28,8 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect('home')  # Replace 'home' with the URL name of your home page
+
+            return redirect_based_on_privilege(user)
         else:
             # Handle invalid login
             return render(request, 'auth/sign-in.html', {'error_message': 'Invalid login credentials'})
@@ -37,7 +55,7 @@ def register_view(request):
         Profile.objects.create(user=user, privilege=privilege_obj)
 
         login(request, user)
-        return redirect('home')
+        return redirect_based_on_privilege(user)
 
     else:
         # get the privilege object
@@ -48,4 +66,4 @@ def register_view(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('login')
+    return redirect('/login')
