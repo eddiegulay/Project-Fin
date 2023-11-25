@@ -11,7 +11,7 @@ def redirect_based_on_privilege(user):
     if privilege_name == 'Hub Manager':
         return redirect('/hmanager')
     elif privilege_name == 'ORG Employee':
-        return redirect('/org_emp')
+        return redirect('/employee')
     elif privilege_name == 'Mentor/Trainer':
         return redirect('/trainer')
     elif privilege_name == 'Finhub Member':
