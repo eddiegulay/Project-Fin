@@ -72,3 +72,19 @@ def challenges(request, thematic_area_id):
         'project_count': len(my_projects),
     }
     return render(request, 'bank/thematic_areas.html', context)
+
+
+def admin_project(request):
+    projects = Project.objects.all()
+    project_count = len(projects)
+    complete_projects = len(Project.objects.filter(is_completed=True))
+    in_complete_projects = len(Project.objects.filter(is_completed=False))
+    perc = int(in_complete_projects/project_count) *100
+    context = {
+        'projects': projects,
+        'project_count': project_count,
+        'complete_projects': complete_projects,
+        'in_complete_projects': in_complete_projects,
+        'perc_in':perc
+    }
+    return render(request, 'bank/project.html', context)
