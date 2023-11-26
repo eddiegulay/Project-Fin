@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authentication.apps.AuthenticationConfig',
     'member.apps.MemberConfig',
+    'bank.apps.BankConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +139,18 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+
+# ...
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Project Fin",
+    "site_header": "Fin Admin",
+    "site_logo": "assets/logo.png",
+
+    
+
+}
+
+# ...
