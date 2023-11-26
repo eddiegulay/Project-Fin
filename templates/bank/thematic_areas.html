@@ -65,11 +65,14 @@
                                             <!--begin::Projects-->
                                             <div class="m-0">
                                                 <!--begin::Heading-->
-                                                <h1 class="text-gray-800 fw-semibold mb-6 mx-5">My Projects</h1>
+                                                <h1 class="text-gray-800 fw-semibold mb-6 mx-5">Potential Solutions</h1>
                                                 <!--end::Heading-->
 
                                                 <!--begin::Items-->
                                                 <div class="mb-10">
+                                                    {% if project_count is 0 %}
+                                                        No Projects yet
+                                                    {% endif %}
                                                     {% for project in projects%}
                                                     <!--begin::Item-->
                                                     <a href="/project/{{project.id}}"
