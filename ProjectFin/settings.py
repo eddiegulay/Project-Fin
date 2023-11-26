@@ -145,12 +145,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ...
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Project Fin Admin",
-    "site_header": "Project Fin Administration",
-    "site_logo": "path/to/your/logo.png",
+    "site_title": "Project Fin",
+    "site_header": "Fin Admin",
+    "site_logo": "assets/logo.png",
 
-    "welcome_sign": "Welcome to Project Fin Admin",  # Customize the welcome sign
-
+    
 
 }
 
