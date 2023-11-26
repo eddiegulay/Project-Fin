@@ -128,8 +128,6 @@
                                                 {% for theme in thematic_areas%}
                                                 <!--begin::Item-->
                                                 <div class="d-flex align-items-center mb-7">
-                                                    
-                                                    
                                                     <!--begin::Symbol-->
                                                     <div class="symbol symbol-50px me-5">
                                                         <span class="symbol-label bg-light-success">
@@ -138,7 +136,6 @@
                                                         </span>
                                                     </div>
                                                     <!--end::Symbol-->
-                                                    
 
                                                     <!--begin::Text-->
                                                     <div class="d-flex flex-column">
@@ -150,8 +147,6 @@
                                                 </div>
                                                 <!--end::Item-->
                                                 {%endfor%}
-                                                
-
                                             </div>
                                             <!--end::Body-->
                                         </div>
@@ -175,7 +170,7 @@
                                                 <div class="d-flex align-items-center mb-7">
                                                     <!--begin::Avatar-->
                                                     <div class="symbol symbol-50px me-5">
-                                                        <img src="../assets/media/avatars/300-6.jpg" class="" alt="" />
+                                                        <img src="{% static 'assets/man.png' %}" class="" alt="" />
                                                     </div>
                                                     <!--end::Avatar-->
 
@@ -184,8 +179,7 @@
                                                         <a href="../pages/projects/users.html"
                                                             class="text-dark fw-bold text-hover-primary fs-6">{{collaborator.first_name}} {{collaborator.last_name}}</a>
 
-                                                        <span class="text-muted d-block fw-semibold">Project
-                                                            Manager</span>
+                                                        <span class="text-muted d-block fw-semibold">{{collaborator.email}}</span>
                                                     </div>
                                                     <!--end::Text-->
                                                 </div>
