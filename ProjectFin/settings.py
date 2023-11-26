@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,3 +139,19 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+
+# ...
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Project Fin Admin",
+    "site_header": "Project Fin Administration",
+    "site_logo": "path/to/your/logo.png",
+
+    "welcome_sign": "Welcome to Project Fin Admin",  # Customize the welcome sign
+
+
+}
+
+# ...

@@ -6,4 +6,4 @@ superuser:
 username: admin
 password: admin
 
-pip install django-jasmine
+pip install django-jazzmin
