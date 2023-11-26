@@ -1,10 +1,10 @@
-<!--begin::Primary-->
+{% load static %}
 <div class="aside-primary d-flex flex-column align-items-lg-center flex-row-auto">
     <!--begin::Logo-->
     <div class="aside-logo d-none d-lg-flex flex-column align-items-center flex-column-auto py-10"
         id="kt_aside_logo">
         <a href="#">
-            <img alt="Project Fin" src="../assets/logo.png" class="h-50px" />
+            <img alt="Project Fin" src="{% static 'assets/logo.png' %}" class="h-50px" />
         </a>
     </div>
     <!--end::Logo-->
@@ -147,7 +147,7 @@
             <div class="cursor-pointer symbol symbol-40px"
                 data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-overflow="true"
                 data-kt-menu-placement="top-start">
-                <img src="../assets/media/avatars/300-1.jpg" alt="image" />
+                <img src="{% static 'assets/logo.png' %}" alt="image" />
             </div>
 
 
@@ -159,7 +159,7 @@
                     <div class="menu-content d-flex align-items-center px-3">
                         <!--begin::Avatar-->
                         <div class="symbol symbol-50px me-5">
-                            <img alt="Logo" src="../assets/media/avatars/300-1.jpg" />
+                            <img alt="Logo" src="{% static 'assets/logo.png' %}" />
                         </div>
                         <!--end::Avatar-->
 
