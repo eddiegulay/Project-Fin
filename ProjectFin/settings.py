@@ -146,10 +146,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
     "site_title": "Project Fin",
-    "site_header": "Fin Admin",
+    "site_header": "Fin Elevated Access",
+    "welcome_sign": "Project Fin Elevated Access",
     "site_logo": "assets/logo.png",
 
-    
+    "copyright": "Project Fin",
+    "site_header": "Fin Elevated Access",
+    "site_brand": "Fin Elevated Access",
 
 }
 
