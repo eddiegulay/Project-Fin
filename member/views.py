@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import *
+from bank.models import *
 
 def member_profile(request):
     user = request.user
     bio = Bio.objects.get(user=user)
     projects = Project.objects.filter(members=user)
+
 
 
     # success rate for project compeltion

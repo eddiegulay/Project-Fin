@@ -1,10 +1,11 @@
+{% load static %}
 <!--begin::Primary-->
 <div class="aside-primary d-flex flex-column align-items-lg-center flex-row-auto">
     <!--begin::Logo-->
     <div class="aside-logo d-none d-lg-flex flex-column align-items-center flex-column-auto py-10"
         id="kt_aside_logo">
-        <a href="../index-2.html">
-            <img alt="Project Fin" src="../assets/media/logos/logo-default.svg" class="h-50px" />
+        <a href="#">
+            <img alt="Project Fin" src="{% static 'assets/logo.png' %}" class="h-50px" />
         </a>
     </div>
     <!--end::Logo-->
@@ -32,20 +33,6 @@
                     <!--end::Nav link-->
                 </li>
                 <!--end::Nav item-->
-                <!--begin::Nav item-->
-                <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover"
-                    data-bs-placement="right" data-bs-dismiss="click" title="Menu">
-                    <!--begin::Nav link-->
-                    <a class="nav-link btn btn-custom btn-icon active" data-bs-toggle="tab"
-                        href="#kt_aside_nav_tab_menu">
-                        <i class="ki-duotone ki-element-11 fs-2x"><span class="path1"></span><span
-                                class="path2"></span><span class="path3"></span><span
-                                class="path4"></span></i>
-                    </a>
-                    <!--end::Nav link-->
-                </li>
-                <!--end::Nav item-->
-               
 
                 <!--begin::Nav item-->
                 <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover"
@@ -172,7 +159,7 @@
             <div class="cursor-pointer symbol symbol-40px"
                 data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-overflow="true"
                 data-kt-menu-placement="top-start">
-                <img src="../assets/media/avatars/300-1.jpg" alt="image" />
+                <img src="https://avatars.githubusercontent.com/u/88213379?v=4" alt="image" />
             </div>
 
 
@@ -184,7 +171,7 @@
                     <div class="menu-content d-flex align-items-center px-3">
                         <!--begin::Avatar-->
                         <div class="symbol symbol-50px me-5">
-                            <img alt="Logo" src="../assets/media/avatars/300-1.jpg" />
+                            <img alt="Logo" src="https://avatars.githubusercontent.com/u/88213379?v=4" />
                         </div>
                         <!--end::Avatar-->
 
